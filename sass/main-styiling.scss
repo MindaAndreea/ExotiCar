@@ -15,6 +15,10 @@ a {
   color: white;
 }
 
+.parag {
+  margin-bottom: 3rem;
+}
+
 @mixin media-tablet {
   @media screen and (max-width: 850px) {
     @content;
@@ -116,6 +120,159 @@ a {
   }
 }
 
+.information {
+  &-content {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+
+    &-column {
+      padding: 6rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h2 {
+        font-size: 4rem;
+        margin-bottom: 3rem;
+        letter-spacing: 0.15rem;
+        line-height: 1.5;
+      }
+
+      h3 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        letter-spacing: 0.15rem;
+        line-height: 1.5;
+      }
+
+      p {
+        font-size: 1.7rem;
+        text-align: start;
+        line-height: 1.5;
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 0.15rem;
+      }
+    }
+
+    &-column-white {
+      &-line {
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 10%;
+        height: 0.5rem;
+        background-color: black;
+        color: black;
+      }
+    }
+
+    &-column-black {
+      background-color: black;
+      color: wheat;
+
+      &-line {
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 10%;
+        height: 0.5rem;
+        background-color: red;
+        color: red;
+      }
+    }
+  }
+}
+
+.footer {
+  &-content {
+    background-color: black;
+    color: wheat;
+    padding: 6rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    h4 {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+      letter-spacing: 0.2rem;
+    }
+
+    p {
+      font-size: 1.6rem;
+      line-height: 1.5;
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 0.15rem;
+      margin-bottom: 2rem;
+    }
+
+    a {
+      color: wheat;
+    }
+
+    &-about,
+    &-get-involved,
+    &-help-center,
+    &-social {
+      margin-right: 5rem;
+    }
+
+    &-line {
+      width: 100%;
+      height: 0.1rem;
+      background-color: rgba(245, 222, 179, 0.835);
+      color: rgba(245, 222, 179, 0.835);
+      margin-bottom: 2rem;
+    }
+
+    &-social {
+      display: flex;
+      flex-direction: column;
+
+      i {
+        font-size: 3rem;
+      }
+
+      a {
+        color: wheat;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        padding: 1.3rem;
+        margin-right: calc(0.5rem + 2vw);
+        border: 0.1rem solid rgba(245, 222, 179, 0.835);
+      }
+
+      &-icons {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 3rem;
+      }
+
+      &-icons a:hover {
+        background-color: wheat;
+        transition: all 0.7s ease;
+        color: black;
+        border-radius: inherit;
+        height: inherit;
+        width: inherit;
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: rgba(245, 222, 179, 0.843);
+        justify-content: flex-end;
+        align-items: flex-end;
+        align-self: flex-end;
+      }
+    }
+  }
+}
+
 @include media-tablet {
   .nav {
     height: auto;
@@ -147,6 +304,16 @@ a {
       }
     }
   }
+
+  .information {
+    &-content {
+      height: auto;
+
+      h3 {
+        font-size: 2.5rem;
+      }
+    }
+  }
 }
 
 @include media-medium-small {
@@ -159,6 +326,53 @@ a {
 
       p {
         font-size: 4rem;
+      }
+    }
+  }
+
+  .information {
+    &-content {
+      flex-direction: column;
+
+      &-column {
+        padding: 4rem;
+      }
+
+      h2,
+      h3,
+      p {
+        letter-spacing: 0.2rem;
+      }
+
+      h3 {
+        font-size: 2.2rem;
+        margin-bottom: 3.5rem;
+      }
+    }
+  }
+
+  .footer {
+    &-content {
+      &-about,
+      &-get-involved,
+      &-help-center,
+      &-social {
+        margin-right: 0;
+        margin-bottom: 5rem;
+      }
+
+      p {
+        margin-bottom: 3rem;
+      }
+
+      &-line {
+        margin-bottom: 5rem;
+      }
+
+      &-social {
+        &-icons {
+          margin-bottom: 5rem;
+        }
       }
     }
   }
@@ -182,6 +396,18 @@ a {
     img {
       margin-top: 5rem;
       margin-left: none;
+    }
+  }
+
+  .information {
+    &-content {
+      h2 {
+        font-size: 3.3rem;
+      }
+
+      h3 {
+        font-size: 2rem;
+      }
     }
   }
 }
